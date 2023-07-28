@@ -31,5 +31,5 @@ export const getSessionStorage = (key: string, needParse?: boolean) => {
   const appKey = withNamespace(key);
   const rawValue = sessionStorage.getItem(appKey);
 
-  return needParse ? JSON.parse(rawValue) : rawValue;
+  return needParse && rawValue ? JSON.parse(rawValue) : rawValue;
 }
